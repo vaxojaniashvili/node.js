@@ -1,9 +1,12 @@
 const fs = require("fs/promises");
 
-fs.writeFile("text.txt", "hello", (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log("Success");
+const writeFile = async (note) => {
+  try {
+    fs.writeFile("notes.txt", note);
+    console.log(note);
+  } catch (error) {
+    console.log(error);
   }
-});
+};
+
+writeFile("corrected code");
