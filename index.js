@@ -1,4 +1,4 @@
-const fs = require("fs/promises");
+const fs = require("fs").promises;
 
 const writeFile = async (note) => {
   try {
@@ -23,4 +23,3 @@ writeFile("corrected code");
 //   }
 // };
 // readFile();
-
