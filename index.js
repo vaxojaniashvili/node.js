@@ -11,15 +11,16 @@ const writeFile = async (note) => {
 
 writeFile("corrected code");
 
-const readFile = async () => {
-  try {
-    fs.readFile("notes.txt", "utf-8")
-      .then((res) => console.log(res))
-      .catch((rej) => {
-        console.log(rej);
-      });
-  } catch (error) {
-    console.log("Error", error);
-  }
-};
-readFile();
+// const readFile = async () => {
+//   try {
+//     fs.readFile("notes.txt", "utf-8")
+//       .then((res) => console.log(res))
+//       .catch((rej) => {
+//         console.log(rej);
+//       });
+//   } catch (error) {
+//     console.log("Error", error);
+//   }
+// };
+// readFile();
+
