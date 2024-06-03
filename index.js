@@ -13,21 +13,12 @@ const request = (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const method = req.method;
 
-  if (parsedUrl.pathname === "/api/auth/signup" && method === "POST") {
+  if (method === "POST") {
     let body = "";
-
     req.on("end", () => {
       const { id, name, email, password } = JSON.parse(body);
-
-      if (!id || !name || !email || !password) {
-        res.writeHead(400, { "Content-Type": "text/plain" });
-        return res.end("All fields are required.");
-      }
-
       const newUser = { id, name, email, password, created };
-
       data.push(newUser);
-
       res.writeHead(201, { "Content-Type": "application/json" });
       res.end(JSON.stringify(newUser));
     });
@@ -36,13 +27,13 @@ const request = (req, res) => {
     res.end(JSON.stringify(data));
   } else {
     res.writeHead(404, { "Content-Type": "text/plain" });
-    res.end("Not Found");
+    res.end("Please route /api/users");
   }
 };
 
 const server = http.createServer(request);
-const PORT = 3000;
+const host = 3001;
 
-server.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+server.listen(host, () => {
+  console.log(`Localhost ${host}`);
 });
