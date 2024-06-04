@@ -35,5 +35,5 @@ const server = http.createServer(request);
 const host = 3001;
 
 server.listen(host, () => {
-  console.log(`Localhost ${host}`);
+  console.log(`Localhost is ${host}`);
 });
